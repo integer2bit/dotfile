@@ -1,0 +1,10 @@
+[wsl2]
+networkingMode=mirrored
+autoProxy=true
+dnsTunneling=true
+firewall=true
+ipv6=true
+
+[experimental]
+autoMemoryReclaim=gradual  # gradual  | dropcache | disabled
+hostAddressLoopback=true
