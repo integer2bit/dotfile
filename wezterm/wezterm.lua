@@ -6,7 +6,8 @@ local config = wezterm.config_builder()
 local mux = wezterm.mux
 
 -- color scheme:
-config.color_scheme = 'Gruvbox dark, medium (base16)'
+-- config.color_scheme = 'Gruvbox dark, medium (base16)'
+config.color_scheme = 'OneDark (base16)'
 -- Tab Bar Appearance & Colors
 config.colors = {
     tab_bar = {
