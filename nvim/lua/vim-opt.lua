@@ -37,5 +37,5 @@ vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 vim.keymap.set("n", "<Leader>v", "<C-w>v", opt)
 vim.keymap.set("n", "<Leader>s", "<C-w>s", opt)
-
-
+-- quit terminal mode
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', {noremap = true})
