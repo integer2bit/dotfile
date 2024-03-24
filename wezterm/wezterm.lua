@@ -90,6 +90,6 @@ wezterm.on('gui-startup', function(cmd)
   local tab, pane, window = mux.spawn_window(cmd or {})
   window:gui_window():maximize()
 end)
-
+-- key bindings
 
 return config

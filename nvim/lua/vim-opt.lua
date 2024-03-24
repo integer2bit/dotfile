@@ -10,22 +10,22 @@ vim.o.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
 -- copy to system clip board in wsl 
 if vim.fn.has('wsl') == 1 then
-vim.api.nvim_create_autocmd('TextYankPost', {
-group = vim.api.nvim_create_augroup('Yank', { clear = true }),
-callback = function()
-vim.fn.system('clip.exe', vim.fn.getreg('"'))
-end,
-    }
+  vim.api.nvim_create_autocmd('TextYankPost', {
+    group = vim.api.nvim_create_augroup('Yank', { clear = true }),
+    callback = function()
+      vim.fn.system('clip.exe', vim.fn.getreg('"'))
+    end,
+  }
   )
 end
 -- highlight after copy
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
-	pattern = { "*" },
-	callback = function()
-		vim.highlight.on_yank({
-			timeout = 300,
-		})
-	end,
+  pattern = { "*" },
+  callback = function()
+    vim.highlight.on_yank({
+      timeout = 300,
+    })
+  end,
 })
 -- https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
 vim.keymap.set("n", "j", [[v:count ? 'j' : 'gj']], { noremap = true, expr = true })
