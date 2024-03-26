@@ -21,7 +21,7 @@ return {
       vim.keymap.set("n", "<c-p>", builtin.find_files, {})
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
       vim.keymap.set("n", "<leader>rs", builtin.resume, {})
-      vim.keymap.set("n", "<c-q>", builtin.oldfiles, {})
+      vim.keymap.set("n", "<leader>o", builtin.oldfiles, {})
       require("telescope").load_extension("ui-select")
     end,
   },

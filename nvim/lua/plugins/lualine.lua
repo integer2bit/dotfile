@@ -3,7 +3,7 @@ return {
 	config = function()
 		require("lualine").setup({
 			options = {
-				theme = "gruvbox_dark",
+				theme = "onedark",
 				sections = {
 					lualine_a = {
 						file = 1,
