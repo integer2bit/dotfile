@@ -31,10 +31,10 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 vim.keymap.set("n", "j", [[v:count ? 'j' : 'gj']], { noremap = true, expr = true })
 vim.keymap.set("n", "k", [[v:count ? 'k' : 'gk']], { noremap = true, expr = true })
 -- window operation
-vim.keymap.set('n', '<Leader>k', ':wincmd k<CR>')
-vim.keymap.set('n', '<Leader>j', ':wincmd j<CR>')
-vim.keymap.set('n', '<Leader>h', ':wincmd h<CR>')
-vim.keymap.set('n', '<Leader>l', ':wincmd l<CR>')
+vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
+vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
+vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
+vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 -- vim.keymap.set('i', '<c-k>', '<Up>')
 -- vim.keymap.set('i', '<c-j>', '<Down>')
 -- vim.keymap.set('i', '<c-h>', '<Left>')
@@ -43,3 +43,4 @@ vim.keymap.set("n", "<Leader>v", "<C-w>v")
 vim.keymap.set("n", "<Leader>s", "<C-w>s")
 -- quit terminal mode
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
+local triggers = {"."}

@@ -90,29 +90,5 @@ wezterm.on("gui-startup", function(cmd)
 	local tab, pane, window = mux.spawn_window(cmd or {})
 	window:gui_window():maximize()
 end)
--- key bindings
-config.keys = {
-	-- map C-h,j,k,l to arrow key
-	{
-		key = "h",
-		mods = "CTRL",
-		action = wezterm.action.SendKey({ key = "LeftArrow" }),
-	},
-	{
-		key = "j",
-		mods = "CTRL",
-		action = wezterm.action.SendKey({ key = "DownArrow" }),
-	},
-	{
-		key = "k",
-		mods = "CTRL",
-		action = wezterm.action.SendKey({ key = "UpArrow" }),
-	},
-	{
-		key = "l",
-		mods = "CTRL",
-		action = wezterm.action.SendKey({ key = "RightArrow" }),
-	},
-}
 
 return config
