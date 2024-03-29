@@ -5,6 +5,8 @@
 - neovim(in wsl)
 - wezterm
 - .wslconfig
+- tmux
+- aria2
 
 ### neovim dependencies
 
@@ -17,7 +19,7 @@
 - gzip
 
 ### tmux
-- prefix set <C-Space>
-- <prefix>r reload tmux config
-- <prefix>I Install tmux plugins
+- prefix set \<C-Space\>
+- \<prefix\>r reload tmux config
+- \<prefix\>I Install tmux plugins
 
