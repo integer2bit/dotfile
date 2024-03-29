@@ -1055,7 +1055,7 @@ return {
 		dashboard.section.buttons.val = {
 			dashboard.button("e", "  > New file", ":ene <BAR> startinsert <CR>"),
 			--			dashboard.button("f", "󰈞  > Find file", ":cd $HOME | Telescope find_files hidden=true<cr>"),
-			dashboard.button("n", "  > Neo tree", ":Neotree filesystem reveal left<cr>"),
+			dashboard.button("n", "  > Nivm tree", ":NvimTreeToggle<CR>"),
 			--			dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
 			dashboard.button("q", "󰗼  > Quit NVIM", ":qa<CR>"),
 		}
