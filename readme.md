@@ -15,3 +15,9 @@
 - unzip
 - GNU tar 
 - gzip
+
+### tmux
+- prefix set <C-Space>
+- <prefix>r reload tmux config
+- <prefix>I Install tmux plugins
+
