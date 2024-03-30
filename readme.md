@@ -1,6 +1,6 @@
-## My personal config file
+# My personal config file
 
-### include
+## include
 
 - neovim(in wsl)
 - wezterm
@@ -8,18 +8,18 @@
 - tmux
 - aria2
 
-### neovim dependencies
+## neovim dependencies
 
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fd](https://github.com/sharkdp/fd)
 - git
 - curl or wget
 - unzip
-- GNU tar 
+- GNU tar
 - gzip
 
-### tmux
+## tmux
+
 - prefix set \<C-Space\>
 - \<prefix\>r reload tmux config
 - \<prefix\>I Install tmux plugins
-
