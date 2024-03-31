@@ -12,11 +12,13 @@
 
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fd](https://github.com/sharkdp/fd)
+- [fzf](https://github.com/junegunn/fzf)
 - git
 - curl or wget
 - unzip
 - GNU tar
 - gzip
+- python3
 
 ## tmux
 
