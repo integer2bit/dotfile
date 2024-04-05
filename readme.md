@@ -3,6 +3,7 @@
 ## include
 
 - neovim(in wsl)
+  - dependencies: wslu,wsl-open
 - wezterm
 - .wslconfig
 - tmux
