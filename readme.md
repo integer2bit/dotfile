@@ -4,10 +4,11 @@
 
 - neovim(in wsl)
   - dependencies: wslu,wsl-open
-- wezterm
+- wezterm (windows)
 - .wslconfig
-- tmux
-- aria2
+- tmux conf
+- aria2 conf
+- obsidian templates
 
 ## neovim dependencies
 
@@ -19,6 +20,7 @@
 - unzip
 - GNU tar
 - gzip
+- nodejs(for lsp)
 - python3
 
 ## tmux
