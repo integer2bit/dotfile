@@ -12,7 +12,7 @@ return {
 			typescriptreact = { "eslint_d" },
 			svelte = { "eslint_d" },
 			python = { "pylint" },
-			markdown = { "markdownlint" },
+			markdown = { "proselint" },
 			cmake = { "cmakelint" },
 		}
 

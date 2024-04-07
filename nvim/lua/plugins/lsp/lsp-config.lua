@@ -109,7 +109,11 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
-
+		-- configure markdown server
+		lspconfig["prosemd_lsp"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
 		-- configure svelte server
 		--    lspconfig["svelte"].setup({
 		--      capabilities = capabilities,

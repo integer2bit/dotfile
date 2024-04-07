@@ -39,6 +39,7 @@ return {
 				--        "pyright",
 				"clangd",
 				"cmake",
+				"prosemd_lsp",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -54,7 +55,7 @@ return {
 				"cmakelint",
 				"cmakelang",
 				"eslint_d", -- js linter
-				"markdownlint",
+				"proselint", -- markdownlint and EnglishGrammer
 			},
 		})
 	end,
