@@ -41,7 +41,6 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 		})
 	end,
 })
-
 -- keymap
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
