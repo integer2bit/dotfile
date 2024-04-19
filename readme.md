@@ -33,6 +33,6 @@
 
 ### Installation
 
-1. copy .zsh directory and .zshrc to $HOME
+1. copy .zshrc to $HOME
 2. source .zshrc
 3. excute `chsh -s $(which zsh)`
