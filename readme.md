@@ -28,3 +28,11 @@
 - prefix set \<C-Space\>
 - \<prefix\>r reload tmux config
 - \<prefix\>I Install tmux plugins
+
+## zsh
+
+### Installation
+
+1. copy .zsh directory and .zshrc to $HOME
+2. source .zshrc
+3. excute `chsh -s $(which zsh)`
