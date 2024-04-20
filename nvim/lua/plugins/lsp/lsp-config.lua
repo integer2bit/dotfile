@@ -110,7 +110,7 @@ return {
 			on_attach = on_attach,
 		})
 		-- configure markdown server
-		lspconfig["prosemd_lsp"].setup({
+		lspconfig["marksman"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
