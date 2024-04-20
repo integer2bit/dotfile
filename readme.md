@@ -36,3 +36,8 @@
 1. copy .zshrc to $HOME
 2. source .zshrc
 3. excute `chsh -s $(which zsh)`
+
+### Command line tools
+
+- fzf
+- tldr

@@ -43,11 +43,22 @@ else
 fi
 export PATH
 
+# ---- FZF -----
+FZF=".fzf"
+if [ ! -d "$HOME/$FZF" ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/$FZF
+    $HOME/$FZF/install
+    echo "fzf has been installed"
+fi
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
+
 ### themes
 themes=".zsh/themes/spaceship-prompt"
 
 if [ ! -d "$HOME/$themes" ]; then
-    git clone --depth 1 --depth 1 https://github.com/spaceship-prompt/spaceship-prompt.git "$HOME/$themes"
+    git clone --depth 1 https://github.com/spaceship-prompt/spaceship-prompt.git "$HOME/$themes"
     echo "Spaceship-prompt has been cloned into $themes."
 fi
 source $ZSH/themes/spaceship-prompt/spaceship.zsh-theme
@@ -85,6 +96,7 @@ if [ ! -d "$HOME/$zsh_autosuggestions" ]; then
     echo "zsh-autosuggestions has been cloned into $zsh_autosuggestions."
 fi
 source $HOME/$zsh_autosuggestions/zsh-autosuggestions.zsh
+bindkey '^ ' autosuggest-accept
 #vi-mode
 vimode=".zsh/plugins/vi-mode"
 
@@ -120,6 +132,7 @@ cursor_mode() {
     zle -N zle-line-init
 }
 cursor_mode
+
 ### custome alias 
 cdw() { local d=`wslpath "$1"`; cd "$d"; }
 alias vi='nvim'
