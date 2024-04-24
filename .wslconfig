@@ -4,6 +4,7 @@ autoProxy=true
 dnsTunneling=true
 firewall=true
 ipv6=true
+guiApplications=false
 
 [experimental]
 autoMemoryReclaim=gradual  # gradual  | dropcache | disabled
