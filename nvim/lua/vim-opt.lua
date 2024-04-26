@@ -10,17 +10,18 @@ vim.g.mapleader = " "
 -- vim number
 opt.number = true
 opt.relativenumber = true
+-- set vim spell check
+vim.opt.spelllang = "en_us,cjk"
+vim.opt.spell = true
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
-
+-- set cursorlien
 opt.cursorline = true
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
--- conseal leavel for markdown
-vim.opt.conceallevel = 2
 -- set undodir
 opt.undofile = true
-opt.undodir = vim.fn.expand("~/.undo//")
+opt.undodir = vim.fn.expand("$HOME/.undo//")
 -- copy to system clipboard
 opt.clipboard = "unnamedplus"
 -- copy to system clip board in wsl
@@ -41,6 +42,8 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 		})
 	end,
 })
+-- conseal leavel for markdown
+vim.opt.conceallevel = 2
 -- keymap
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/

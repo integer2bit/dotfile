@@ -17,9 +17,9 @@ return {
 			vim.cmd(string.format("!wsl-open %s", url))
 		end
 		vim.cmd([[
-function! OpenMarkdownPreview(url) 
+    function! OpenMarkdownPreview(url) 
     call luaeval("_G.OpenMarkdownPreview(_A['url'])", {'url': a:url})
-endfunction
+    endfunction
 ]])
 		vim.g.mkdp_browserfunc = "OpenMarkdownPreview"
 	end,
