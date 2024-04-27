@@ -57,7 +57,11 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 -- quit terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
 -- change directory into current file path
-vim.keymap.set("n", "<leader>cd", "<cmd>cd %:h<CR>", { desc = "Set files location as dir" })
+vim.keymap.set("n", "<leader>cd", function()
+	local cwd = vim.fn.expand("%:h")
+	vim.cmd("cd " .. cwd)
+	print("Changed directory to " .. cwd)
+end, { desc = "Set current buffer directory as working directory" })
 -- window management
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
