@@ -64,6 +64,23 @@ return {
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 		end
 
+		vim.g["diagnostics_active"] = true
+		function Toggle_diagnostics()
+			if vim.g.diagnostics_active then
+				vim.g.diagnostics_active = false
+				vim.diagnostic.disable()
+			else
+				vim.g.diagnostics_active = true
+				vim.diagnostic.enable()
+			end
+		end
+
+		vim.keymap.set(
+			"n",
+			"<leader>xd",
+			Toggle_diagnostics,
+			{ noremap = true, silent = true, desc = "Toggle vim diagnostics" }
+		)
 		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 

@@ -1,5 +1,8 @@
 return {
 	"nvim-lualine/lualine.nvim",
+	dependencies = {
+		"folke/noice.nvim",
+	},
 	config = function()
 		require("lualine").setup({
 			config = {
@@ -11,21 +14,29 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = {
-					{ "mode" },
-					{
-						function()
-							local reg = vim.fn.reg_recording()
-							if reg == "" then
-								return ""
-							end -- not recording
-							return "recording to " .. reg
-						end,
-					},
-				},
+				lualine_a = { "mode" },
 				lualine_b = { "branch", "diff", "diagnostics" },
 				lualine_c = { "filename", "selectioncount" },
-				lualine_x = { "encoding", "fileformat", "filetype" },
+				lualine_x = {
+					"encoding",
+					"fileformat",
+					"filetype",
+					{
+						require("noice").api.status.command.get,
+						cond = require("noice").api.status.command.has,
+						color = { fg = "#c6d0f5" },
+					},
+					{
+						require("noice").api.status.mode.get,
+						cond = require("noice").api.status.mode.has,
+						color = { fg = "#c6d0f5" },
+					},
+					{
+						require("noice").api.status.search.get,
+						cond = require("noice").api.status.search.has,
+						color = { fg = "#c6d0f5" },
+					},
+				},
 				lualine_y = { "progress" },
 				lualine_z = { "location" },
 			},
