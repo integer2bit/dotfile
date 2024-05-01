@@ -66,11 +66,11 @@ return {
 				["g?"] = "actions.show_help",
 				["<CR>"] = "actions.select",
 				["<C-s>"] = "actions.select_vsplit",
-				["<C-h>"] = "actions.select_split",
+				-- ["<C-h>"] = "actions.select_split",
 				["<C-t>"] = "actions.select_tab",
 				["<C-p>"] = "actions.preview",
 				["<C-c>"] = "actions.close",
-				["<C-l>"] = "actions.refresh",
+				["<C-r>"] = "actions.refresh",
 				["-"] = "actions.parent",
 				["_"] = "actions.open_cwd",
 				["`"] = "actions.cd",
@@ -85,7 +85,7 @@ return {
 				border = "rounded",
 			},
 			-- Set to false to disable all of the above keymaps
-			use_default_keymaps = true,
+			use_default_keymaps = false,
 			view_options = {
 				-- Show files and directories that start with "."
 				show_hidden = false,

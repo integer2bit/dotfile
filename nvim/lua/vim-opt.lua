@@ -22,14 +22,16 @@ opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 -- set undodir
 opt.undofile = true
 opt.undodir = vim.fn.expand("$HOME/.undo//")
--- copy to system clipboard
-opt.clipboard = "unnamedplus"
+
+-- copy to system if not on wsl
+-- opt.clipboard = "unnamedplus"
+
 -- copy to system clip board in wsl
 if vim.fn.has("wsl") == 1 then
 	vim.api.nvim_create_autocmd("TextYankPost", {
 		group = vim.api.nvim_create_augroup("Yank", { clear = true }),
 		callback = function()
-			vim.fn.system("clip.exe", vim.fn.getreg('"'))
+			vim.fn.system("/mnt/c/Windows/System32/clip.exe", vim.fn.getreg('"'))
 		end,
 	})
 end
@@ -44,6 +46,13 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 })
 -- conseal leavel for markdown
 vim.opt.conceallevel = 2
+-- open help in a vertical split
+local group = vim.api.nvim_create_augroup("vertical_help", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	group = group,
+	pattern = "help",
+	command = "wincmd L",
+})
 -- keymap
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
