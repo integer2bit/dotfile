@@ -47,12 +47,12 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 -- conseal leavel for markdown
 vim.opt.conceallevel = 2
 -- open help in a vertical split
-local group = vim.api.nvim_create_augroup("vertical_help", { clear = true })
-vim.api.nvim_create_autocmd("FileType", {
-	group = group,
-	pattern = "help",
-	command = "wincmd L",
-})
+-- local group = vim.api.nvim_create_augroup("vertical_help", { clear = true })
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	group = group,
+-- 	pattern = "help",
+-- 	command = "wincmd L",
+-- })
 -- keymap
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
@@ -72,10 +72,7 @@ vim.keymap.set("n", "<leader>cd", function()
 	print("Changed directory to " .. cwd)
 end, { desc = "Set current buffer directory as working directory" })
 -- window management
-vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
-vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
-vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
-vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
+vim.keymap.set("n", "<leader>w", "<C-w>", { noremap = true, silent = true, desc = "window operation" })
 -- tab
 vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
 vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
