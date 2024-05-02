@@ -22,6 +22,10 @@ opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 -- set undodir
 opt.undofile = true
 opt.undodir = vim.fn.expand("$HOME/.undo//")
+-- set folding
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldlevelstart = 5
 
 -- copy to system if not on wsl
 -- opt.clipboard = "unnamedplus"
