@@ -29,9 +29,12 @@
 
 ## tmux
 
+### Install config
+
+Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux sessions
+
 - prefix set \<C-Space\>
 - \<prefix\>r reload tmux config
-- \<prefix\>I Install tmux plugins
 
 ## zsh
 
