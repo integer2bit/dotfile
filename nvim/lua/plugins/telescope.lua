@@ -21,6 +21,22 @@ return {
 					},
 				},
 			},
+			pickers = {
+				buffers = {
+					mappings = {
+						i = {
+							["<C-d>"] = actions.delete_buffer + actions.move_to_top,
+						},
+					},
+				},
+				-- oldfiles = {
+				-- 	mappings = {
+				-- 		i = {
+				-- 			["<C-d>"] = actions.drop_all,
+				-- 		},
+				-- 	},
+				-- },
+			},
 		})
 
 		telescope.load_extension("fzf")

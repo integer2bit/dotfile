@@ -25,7 +25,7 @@ opt.undodir = vim.fn.expand("$HOME/.undo//")
 -- set folding
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldlevelstart = 5
+opt.foldlevelstart = 8
 
 -- copy to system if not on wsl
 -- opt.clipboard = "unnamedplus"
