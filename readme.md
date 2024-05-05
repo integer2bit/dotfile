@@ -10,6 +10,10 @@
 - aria2 conf
 - obsidian templates
 
+### wsl-open Installation
+
+`curl -o /usr/bin/wsl-open https://raw.githubusercontent.com/4U6U57/wsl-open/master/wsl-open.sh && chmod +x /usr/bin/wsl-open`
+
 ## neovim dependencies
 
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
