@@ -10,18 +10,11 @@
 ## include
 
 - neovim(in wsl)
-  - dependencies: [wsl-open](https://gitlab.com/4U6U57/wsl-open) (for markdown preview)
 - wezterm (windows)
 - .wslconfig
 - tmux conf
 - aria2 conf
 - obsidian templates
-
-### wsl-open Installation
-
-`curl -o /usr/bin/wsl-open https://raw.githubusercontent.com/4U6U57/wsl-open/master/wsl-open.sh && chmod +x /usr/bin/wsl-open`
-
-<p id="1"></p>
 
 ## tmux
 
@@ -57,7 +50,6 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - make
 - cmake
 
-### Command line tools
+### neovim browser function in wsl
 
-- fzf
-- tldr
+Add chrome.exe to Windows $PATH

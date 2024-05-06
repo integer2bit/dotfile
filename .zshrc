@@ -5,6 +5,14 @@ export ZSH=$HOME/.zsh
 export VISUAL=nvim
 export EDITOR=nvim
 
+###  Path
+if [ "$(id -u)" -eq 0 ]; then
+  PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+else
+  PATH="/usr/local/bin:/usr/bin:/bin"
+fi
+export PATH
+
 ### Create zsh directory
 dir_list=(.zsh .zsh/plugins .zsh/themes)
 
@@ -35,13 +43,6 @@ setopt HIST_IGNORE_ALL_DUPS
 # History won't show duplicates on search.
 setopt HIST_FIND_NO_DUPS
 
-###  Path
-if [ "$(id -u)" -eq 0 ]; then
-  PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-else
-  PATH="/usr/local/bin:/usr/bin:/bin"
-fi
-export PATH
 
 # ---- FZF -----
 FZF=".fzf"
@@ -138,7 +139,6 @@ cdw() { local d=`wslpath "$1"`; cd "$d"; }
 alias vi='nvim'
 alias cdob='cd /mnt/d/Documents/obsidian'
 alias cmd='/mnt/c/Windows/SysWOW64/WindowsPowerShell/v1.0/powershell.exe'
-alias cdconfig='cd /mnt/c/Users/world/.config'
 
 #zsh-syntax-highlighting
 zsh_syntax_highlighting=".zsh/plugins/zsh-syntax-highlighting"

@@ -16,7 +16,7 @@ vim.opt.spell = true
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
--- set cursorlien
+-- set cursorline
 opt.cursorline = true
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 -- set undodir
@@ -26,6 +26,21 @@ opt.undodir = vim.fn.expand("$HOME/.undo//")
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevelstart = 8
+
+-- gx open browser with wsl
+function _G.open_cursor_link()
+	local link = vim.fn.expand("<cfile>")
+	if link and link ~= "" then
+		local cmd
+		if vim.fn.has("wsl") == 1 then
+			cmd = "/mnt/c/Windows/SysWOW64/WindowsPowerShell/v1.0/powershell.exe Start chrome " .. link
+		end
+		vim.fn.system(cmd)
+	else
+		print("No link detected under cursor.")
+	end
+end
+vim.api.nvim_set_keymap("n", "gx", ":lua open_cursor_link()<CR>", { noremap = true, silent = true })
 
 -- copy to system if not on wsl
 -- opt.clipboard = "unnamedplus"
@@ -59,7 +74,7 @@ vim.opt.conceallevel = 2
 -- })
 -- keymap
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
--- https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
+-- https://www.reddit.com/r/vim/comments/3k4cbr/problem_with_gj_and_gk/
 vim.keymap.set("n", "j", [[v:count ? 'j' : 'gj']], { noremap = true, expr = true })
 vim.keymap.set("n", "k", [[v:count ? 'k' : 'gk']], { noremap = true, expr = true })
 -- window operation
