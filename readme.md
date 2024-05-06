@@ -18,6 +18,10 @@
 
 ## tmux
 
+### dependencies
+
+- xclip for tmux yank
+
 ### Install config
 
 Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux sessions
@@ -25,7 +29,13 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - prefix set \<C-Space\>
 - \<prefix\>r reload tmux config
 
+## dependencies
+
 ## zsh
+
+### dependencies
+
+- [fzf](https://github.com/junegunn/fzf)
 
 ### Installation
 
