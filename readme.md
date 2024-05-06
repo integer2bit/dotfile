@@ -2,7 +2,7 @@
 
 ## Installation order
 
-1. [tmux and tmux plugins](#1)
+1. tmux and tmux plugins
 2. zsh
 3. neovim dependencies
 4. neovim plugins
