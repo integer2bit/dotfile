@@ -73,7 +73,7 @@ return {
 				["<C-r>"] = "actions.refresh",
 				["-"] = "actions.parent",
 				["_"] = "actions.open_cwd",
-				["`"] = "actions.cd",
+				["<leader>cd"] = "actions.cd",
 				["~"] = "actions.tcd",
 				["gs"] = "actions.change_sort",
 				["gx"] = "actions.open_external",
