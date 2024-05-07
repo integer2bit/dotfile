@@ -5,6 +5,7 @@ return {
 		"nvim-lua/plenary.nvim",
 	},
 	opts = function()
+		local none = ""
 		local dashboard = require("alpha.themes.dashboard")
 		require("alpha.term")
 		dashboard.opts.opts.noautocmd = true
@@ -31,7 +32,7 @@ return {
 			[[⠿⠛⠛⠛⠛⠛⠛⠻⢿⣿⣿⣿⣿⣯⣟⠷⢷⣿⡿⠋⠀⠀⠀⠀⣵⡀⢠⡿⠋⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
 			[[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⢿⣿⣿⠂⠀⠀⠀⠀⠀⢀⣽⣿⣿⣿⣿⣿⣿⣿⣍⠛⠿⣿⣿⣿⣿⣿⣿]],
 		}
-		dashboard.section.header.opts.hl = "Identifier"
+		dashboard.section.header.opts.hl = "none"
 		dashboard.section.buttons.val = {
 			dashboard.button("e", "  > New file", ":ene <BAR> startinsert <CR>"),
 			--			dashboard.button("f", "󰈞  > Find file", ":cd $HOME | Telescope find_files hidden=true<cr>"),

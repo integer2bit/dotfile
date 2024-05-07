@@ -10,7 +10,7 @@ return {
 					-- Disable sections and component separators
 					component_separators = "",
 					section_separators = "",
-					theme = "catppuccin-frappe",
+					theme = "",
 				},
 			},
 			sections = {
