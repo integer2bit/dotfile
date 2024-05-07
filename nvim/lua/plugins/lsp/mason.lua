@@ -53,10 +53,10 @@ return {
 				--        "isort", -- python formatter
 				--        "black", -- python formatter
 				--        "pylint", -- python linter
-				"cmakelint",
-				"alex",
-				"cmakelang",
-				"eslint_d", -- js linter
+				-- "cmakelint",  --cmakelint
+				-- "alex", --markdownlint
+				"cmakelang", -- cmake formatter and linter
+				-- "eslint_d", -- js linter
 			},
 		})
 	end,
