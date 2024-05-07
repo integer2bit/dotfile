@@ -64,7 +64,8 @@ return {
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 		end
 
-		vim.g["diagnostics_active"] = true
+		-- vim.g["diagnostics_active"] = true
+		vim.diagnostic.disable()
 		function Toggle_diagnostics()
 			if vim.g.diagnostics_active then
 				vim.g.diagnostics_active = false
