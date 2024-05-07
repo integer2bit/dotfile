@@ -96,7 +96,7 @@ vim.keymap.set("n", "<leader>w", "<C-w>", { noremap = true, silent = true, desc 
 vim.keymap.set("n", "<leader>bn", "<cmd>bn<CR>", { desc = "Next buffer" }) -- open new tab
 vim.keymap.set("n", "<leader>bp", "<cmd>bp<CR>", { desc = "Previous buffer" }) -- open new tab
 vim.keymap.set("n", "<leader>bl", "<cmd>blast<CR>", { desc = "Last buffer" }) -- open new tab
-vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Delete current buffer" }) --  move current buffer to new tab
+vim.keymap.set("n", "<leader>bd", "<cmd>bd!<CR>", { desc = "Delete current buffer" }) --  move current buffer to new tab
 -- Disable bufferline
 vim.opt.showtabline = 0
 -- tab management
