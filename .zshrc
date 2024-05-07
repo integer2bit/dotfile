@@ -8,11 +8,13 @@ export EDITOR=nvim
 ###  Path
 if [ "$(id -u)" -eq 0 ]; then
   PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+  if uname -r | grep -qi WSL; then
+      export PATH=$PATH:/mnt/c/Windows/SysWOW64/WindowsPowerShell/v1.0
+fi
 else
   PATH="/usr/local/bin:/usr/bin:/bin"
 fi
 export PATH
-
 ### Create zsh directory
 dir_list=(.zsh .zsh/plugins .zsh/themes)
 
