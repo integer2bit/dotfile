@@ -25,7 +25,7 @@ opt.undodir = vim.fn.expand("$HOME/.undo//")
 -- set folding
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldlevelstart = 8
+opt.foldenable = false
 
 -- gx open browser with wsl
 function _G.open_cursor_link()

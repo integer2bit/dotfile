@@ -33,14 +33,12 @@ return {
 				"cssls",
 				"tailwindcss",
 				"lua_ls",
-				--        "svelte",
-				--        "graphql",
-				--        "emmet_ls",
-				--        "prismals",
-				--        "pyright",
 				"clangd",
 				"cmake",
 				"marksman",
+				--        "emmet_ls",
+				--        "prismals",
+				--        "pyright",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -50,13 +48,12 @@ return {
 			ensure_installed = {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
+				"cmakelang", -- cmake formatter and linter
+				"markdownlint", -- markdown linter
+				"eslint_d", -- js linter
 				--        "isort", -- python formatter
 				--        "black", -- python formatter
 				--        "pylint", -- python linter
-				-- "cmakelint",  --cmakelint
-				-- "alex", --markdownlint
-				"cmakelang", -- cmake formatter and linter
-				-- "eslint_d", -- js linter
 			},
 		})
 	end,
