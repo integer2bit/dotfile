@@ -7,14 +7,14 @@
 3. neovim dependencies
 4. neovim plugins
 
-## include
+## include config
 
 - neovim(in wsl)
+    - intergrate with obsidian
 - wezterm (windows)
 - .wslconfig
-- tmux conf
-- aria2 conf
-- obsidian templates
+- tmux
+- aria2
 
 ## tmux
 
@@ -52,7 +52,7 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - curl or wget
 - unzip
 - gzip
-- nodejs(for lsp)
+- nodejs
 - npm
 - python3
 - python-pip
@@ -62,4 +62,4 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 
 ### neovim browser function in wsl
 
-Add chrome.exe to Windows $PATH
+Add chrome.exe to $PATH on Windows

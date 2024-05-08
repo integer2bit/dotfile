@@ -44,3 +44,6 @@ undodir
 xclip
 linter
 formatter
+blackhole
+keymap
+bufferline

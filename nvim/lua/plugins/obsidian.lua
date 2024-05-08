@@ -11,6 +11,7 @@ return {
 	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		"nvim-telescope/telescope.nvim",
 	},
 	config = function()
 		require("obsidian").setup({
@@ -29,7 +30,7 @@ return {
 					opts = { noremap = false, expr = true, buffer = true },
 				},
 				-- Toggle check-boxes.
-				["<leader>ch"] = {
+				["<leader>oc"] = {
 					action = function()
 						return require("obsidian").util.toggle_checkbox()
 					end,
@@ -63,6 +64,44 @@ return {
 				date_format = "%Y-%m-%d",
 				alias_format = "%B %-d, %Y",
 			},
+			picker = {
+				-- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', or 'mini.pick'.
+				name = "telescope.nvim",
+				-- Optional, configure key mappings for the picker. These are the defaults.
+				-- Not all pickers support all mappings.
+				mappings = {
+					-- Create a new note from your query.
+					new = "<C-n>",
+					-- Insert a link to the selected note.
+					insert_link = "<C-l>",
+				},
+			},
+			-- Optional, alternatively you can customize the frontmatter data.
+			---@return table
+			note_frontmatter_func = function(note)
+				-- Add the title of the note as an alias.
+				if note.title then
+					note:add_alias(note.title)
+				end
+
+				local out = {
+					id = note.id,
+					aliases = note.aliases,
+					tags = note.tags,
+					["Date created"] = os.date("%Y-%m-%d %H:%M:%S"),
+					["Last modified"] = os.date("%Y-%m-%d %H:%M:%S"),
+				}
+
+				-- `note.metadata` contains any manually added fields in the frontmatter.
+				-- So here we just make sure those fields are kept in the frontmatter.
+				if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+					for k, v in pairs(note.metadata) do
+						out[k] = v
+					end
+				end
+
+				return out
+			end,
 			ui = {
 				enable = true, -- set to false to disable all additional syntax features
 				update_debounce = 200, -- update delay after a text change (in milliseconds)
@@ -73,11 +112,6 @@ return {
 					["x"] = { char = "", hl_group = "ObsidianDone" },
 					[">"] = { char = "", hl_group = "ObsidianRightArrow" },
 					["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
-					-- Replace the above with this if you don't have a patched font:
-					-- [" "] = { char = "☐", hl_group = "ObsidianTodo" },
-					-- ["x"] = { char = "✔", hl_group = "ObsidianDone" },
-
-					-- You can also add more custom ones...
 				},
 				-- Use bullet marks for non-checkbox lists.
 				bullets = { char = "•", hl_group = "ObsidianBullet" },
@@ -102,11 +136,21 @@ return {
 					ObsidianHighlightText = { bg = "#75662e" },
 				},
 			},
+			-- Specify how to handle attachments.
+			attachments = {
+				img_folder = "assets",
+			},
 			--keymaps
-			vim.keymap.set("n", "<leader>od", "<cmd>ObsidianDailies<cr>"),
-			vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianTemplate<cr>"),
-			vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianOpen<cr>"),
-			vim.keymap.set("n", "<leader>og", "<cmd>ObsidianTags<cr>"),
+			vim.keymap.set("n", "<leader>od", "<cmd>ObsidianDailies<cr>", { desc = "Obsidian daily note" }),
+			vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianTags<cr>", { desc = "Search tags" }),
+			vim.keymap.set("n", "<leader>os", "<cmd>ObsidianSearch<cr>", { desc = "Search Obsidian" }),
+			vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianOpen<cr>", { desc = "Open in Obsidian App" }),
+			vim.keymap.set("n", "<leader>ob", "<cmd>ObsidianBacklinks<CR>", { desc = "Show ObsidianBacklinks" }),
+			vim.keymap.set("v", "<leader>oL", "<cmd>ObsidianLink<cr>", { desc = "Link visual text to a note" }),
+			vim.keymap.set("v", "<leader>ol", "<cmd>ObsidianLinkNew<cr>", { desc = "Create link to a new note" }),
+			vim.keymap.set("n", "<leader>ol", "<cmd>ObsidianLinks<cr>", { desc = "ObsidianLinks in current file" }),
+			vim.keymap.set("n", "<leader>or", "<cmd>ObsidianRename<CR>", { desc = "Obsidian rename" }),
+			vim.keymap.set("n", "<leader>on", "<cmd>ObsidianNew<CR>", { desc = "Create New Note" }),
 		})
 	end,
 }

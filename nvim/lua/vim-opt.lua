@@ -92,6 +92,8 @@ vim.keymap.set("n", "<leader>cd", function()
 	vim.cmd("cd " .. cwd)
 	print("Changed directory to " .. cwd)
 end, { desc = "Set current buffer directory as working directory" })
+-- black hole register keymap
+vim.keymap.set("n", '<leader>"', '"_', { noremap = true, silent = true, desc = "black hole register" })
 -- window management
 vim.keymap.set("n", "<leader>w", "<C-w>", { noremap = true, silent = true, desc = "window operation" })
 -- buffer management
