@@ -32,19 +32,20 @@ opt.foldenable = false
 -- gx open browser with wsl
 function _G.open_cursor_link()
 	local link = vim.fn.expand("<cfile>")
-	-- local file = vim.fn.expand("<cfile>")
-	if link and link ~= "" then
+	if link and string.match(link, "^https?://") then
 		local cmd
 		if vim.fn.has("wsl") == 1 then
 			cmd = "/mnt/c/Windows/SysWOW64/WindowsPowerShell/v1.0/powershell.exe Start chrome.exe " .. link
 		end
 		vim.fn.system(cmd)
 	else
-		print("No link detected under cursor.")
+		print("no url found")
 	end
 end
-vim.api.nvim_set_keymap("n", "gx", ":lua open_cursor_link()<CR>", { noremap = true, silent = true })
 
+if vim.fn.has("wsl") == 1 then
+	vim.api.nvim_set_keymap("n", "gx", ":lua open_cursor_link()<CR>", { noremap = true, silent = true })
+end
 -- copy to system if not on wsl
 -- opt.clipboard = "unnamedplus"
 
@@ -95,6 +96,7 @@ vim.keymap.set("n", "<leader>cd", function()
 end, { desc = "Set current buffer directory as working directory" })
 -- black hole register keymap
 vim.keymap.set("n", '<leader>"', '"_', { noremap = true, silent = true, desc = "black hole register" })
+vim.keymap.set("v", '<leader>"', '"_', { noremap = true, silent = true, desc = "black hole register" })
 -- window management
 vim.keymap.set("n", "<leader>w", "<C-w>", { noremap = true, silent = true, desc = "window operation" })
 -- buffer management
