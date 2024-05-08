@@ -32,10 +32,11 @@ opt.foldenable = false
 -- gx open browser with wsl
 function _G.open_cursor_link()
 	local link = vim.fn.expand("<cfile>")
+	-- local file = vim.fn.expand("<cfile>")
 	if link and link ~= "" then
 		local cmd
 		if vim.fn.has("wsl") == 1 then
-			cmd = "/mnt/c/Windows/SysWOW64/WindowsPowerShell/v1.0/powershell.exe Start chrome " .. link
+			cmd = "/mnt/c/Windows/SysWOW64/WindowsPowerShell/v1.0/powershell.exe Start chrome.exe " .. link
 		end
 		vim.fn.system(cmd)
 	else
