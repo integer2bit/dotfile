@@ -10,6 +10,8 @@
 ## include config
 
 - neovim(in wsl)
+  - wsl-open.sh for open file with external program
+    - Installation:
     - intergrate with obsidian
 - wezterm (windows)
 - .wslconfig
@@ -29,9 +31,7 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - prefix set \<C-Space\>
 - \<prefix\>r reload tmux config
 
-## dependencies
-
-## zsh
+## zsh dependencies
 
 ### dependencies
 

@@ -8,6 +8,7 @@ opt.shiftwidth = 2 -- 2 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.swapfile = false
+vim.g.markdown_recommended_style = 0 -- set default tabstop in markdown file
 vim.g.mapleader = " "
 -- vim number
 opt.number = true
