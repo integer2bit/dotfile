@@ -39,6 +39,15 @@ return {
 			},
 		})
 
+		-- Wrap lines in previewer
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "TelescopePreviewerLoaded",
+			callback = function(args)
+				vim.wo.wrap = true
+				-- vim.wo.number = true
+			end,
+		})
+
 		telescope.load_extension("fzf")
 
 		-- set keymaps
@@ -48,13 +57,6 @@ return {
 		keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
 		keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
 		keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "buffers list" })
-
-		-- keymap.set(
-		-- 	"n",
-		-- 	"<leader>fc",
-		-- 	"<cmd>Telescope current_buffer_fuzzy_find<cr>",
-		-- 	{ desc = "Find string in current buffer" }
-		-- )
 		keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 		keymap.set("n", "<leader>fm", "<cmd>Telescope marks<cr>", { desc = "Marks list" })
 		keymap.set("n", "<leader>fn", "<cmd>Telescope notify<cr>", { desc = "notify list" })
