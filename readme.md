@@ -11,7 +11,7 @@
 
 - neovim(in wsl)
   - wsl-open.sh for open file with external program
-    - Installation:
+    - Installation: `curl -o /usr/bin/wsl-open https://raw.githubusercontent.com/integer2bit/dotfiles/main/wsl-open.sh`
     - intergrate with obsidian
 - wezterm (windows)
 - .wslconfig
@@ -32,8 +32,6 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - \<prefix\>r reload tmux config
 
 ## zsh dependencies
-
-### dependencies
 
 - [fzf](https://github.com/junegunn/fzf)
 
