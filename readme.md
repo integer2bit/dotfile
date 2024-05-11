@@ -57,6 +57,7 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - gcc
 - make
 - cmake
+- texlive (for vimtex)
 
 ### neovim browser function in wsl
 
