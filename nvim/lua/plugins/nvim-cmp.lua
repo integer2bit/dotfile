@@ -20,8 +20,8 @@ return {
 
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		-- lazy_load have some problems about latex snippets, latex snippets only load after open markdown file
-		-- require("luasnip.loaders.from_vscode").lazy_load()
-		require("luasnip.loaders.from_vscode").load({})
+		require("luasnip.loaders.from_vscode").lazy_load()
+		-- require("luasnip.loaders.from_vscode").load({})
 
 		cmp.setup({
 			completion = {

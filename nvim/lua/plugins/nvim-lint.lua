@@ -11,6 +11,7 @@ return {
 			typescriptreact = { "eslint_d" },
 			markdown = { "markdownlint" },
 			cmake = { "cmakelang" },
+			latex = { "chktex" },
 			-- python = { "pylint" },
 		}
 		local markdownlint = require("lint").linters.markdownlint
