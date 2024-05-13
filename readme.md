@@ -58,6 +58,7 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - make
 - cmake
 - texlive (for vimtex)
+- tree-sitter-cli (for latex parser)
 
 ### neovim browser function in wsl
 

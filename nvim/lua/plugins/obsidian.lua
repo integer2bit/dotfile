@@ -88,6 +88,8 @@ return {
 					id = note.id,
 					aliases = note.aliases,
 					tags = note.tags,
+					-- ["links"] = "",
+					-- ["backlins"] = "",
 					["Date created"] = os.date("%Y-%m-%d %H:%M:%S"),
 					["Last modified"] = os.date("%Y-%m-%d %H:%M:%S"),
 				}
