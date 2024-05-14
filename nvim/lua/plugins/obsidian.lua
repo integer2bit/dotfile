@@ -90,7 +90,7 @@ return {
 					tags = note.tags,
 					-- ["links"] = "",
 					-- ["backlins"] = "",
-					["Date created"] = os.date("%Y-%m-%d %H:%M:%S"),
+					["Date"] = os.date("%Y-%m-%d %H:%M:%S"),
 					["Last modified"] = os.date("%Y-%m-%d %H:%M:%S"),
 				}
 

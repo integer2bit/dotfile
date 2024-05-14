@@ -34,7 +34,7 @@ opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldenable = false
 -- shada file
-vim.opt.shada = { "'20", "<10", "s10", "h" }
+vim.opt.shada = { "'50", "<100", "s100", "h" }
 
 -- clipboard settings
 vim.opt.clipboard = "unnamedplus"
