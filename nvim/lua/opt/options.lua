@@ -33,7 +33,10 @@ opt.undodir = vim.fn.expand("$HOME/.undo//")
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldenable = false
+-- shada file
+vim.opt.shada = { "'20", "<10", "s10", "h" }
 
+-- clipboard settings
 vim.opt.clipboard = "unnamedplus"
 -- copy to system clip board in wsl
 if vim.fn.has("wsl") == 1 then
