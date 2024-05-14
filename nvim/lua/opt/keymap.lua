@@ -1,35 +1,4 @@
-vim.cmd("let g:netrw_liststyle = 3")
-local opt = vim.opt
--- true color
-opt.termguicolors = true
--- tabs & indentation
-opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
-opt.shiftwidth = 2 -- 2 spaces for indent width
-opt.expandtab = true -- expand tab to spaces
-opt.autoindent = true -- copy indent from current line when starting new one
-opt.swapfile = false
-vim.g.markdown_recommended_style = 0 -- set default tabstop in markdown file
-vim.g.mapleader = " "
--- vim number
-opt.number = true
-opt.relativenumber = true
--- set vim spell check
-vim.opt.spelllang = "en_us,cjk"
-vim.opt.spell = true
--- search settings
-opt.ignorecase = true -- ignore case when searching
-opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
--- set cursorline
-opt.cursorline = true
-opt.signcolumn = "yes" -- show sign column so that text doesn't shift
--- set undodir
-opt.undofile = true
-opt.undodir = vim.fn.expand("$HOME/.undo//")
--- set folding
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldenable = false
-
+-- keymap
 -- gx open browser with wsl
 function _G.open_cursor_link()
 	local link = vim.fn.expand("<cfile>")
@@ -47,42 +16,16 @@ end
 if vim.fn.has("wsl") == 1 then
 	vim.api.nvim_set_keymap("n", "gx", ":lua open_cursor_link()<CR>", { noremap = true, silent = true })
 end
--- copy to system if not on wsl
--- opt.clipboard = "unnamedplus"
 
--- copy to system clip board in wsl
-if vim.fn.has("wsl") == 1 then
-	vim.api.nvim_create_autocmd("TextYankPost", {
-		group = vim.api.nvim_create_augroup("Yank", { clear = true }),
-		callback = function()
-			vim.fn.system("/mnt/c/Windows/System32/clip.exe", vim.fn.getreg('"'))
-		end,
-	})
-end
--- highlight after copy
-vim.api.nvim_create_autocmd({ "TextYankPost" }, {
-	pattern = { "*" },
-	callback = function()
-		vim.highlight.on_yank({
-			timeout = 300,
-		})
-	end,
-})
--- conseal leavel for markdown
-vim.opt.conceallevel = 2
--- open help in a vertical split
--- local group = vim.api.nvim_create_augroup("vertical_help", { clear = true })
--- vim.api.nvim_create_autocmd("FileType", {
--- 	group = group,
--- 	pattern = "help",
--- 	command = "wincmd L",
--- })
--- keymap
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- https://www.reddit.com/r/vim/comments/3k4cbr/problem_with_gj_and_gk/
 vim.keymap.set("n", "j", [[v:count ? 'j' : 'gj']], { noremap = true, expr = true })
 vim.keymap.set("n", "k", [[v:count ? 'k' : 'gk']], { noremap = true, expr = true })
 -- window operation
+vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
 vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")

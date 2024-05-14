@@ -1,2 +1,2 @@
-require("vim-opt")
+require("init")
 require("lazy_init")
