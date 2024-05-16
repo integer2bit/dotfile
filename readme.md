@@ -60,6 +60,4 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - texlive (for vimtex)
 - tree-sitter-cli (for latex parser)
 
-### neovim browser function in wsl
 
-Add chrome.exe to $PATH on Windows

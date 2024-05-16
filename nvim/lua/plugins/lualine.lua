@@ -16,7 +16,7 @@ return {
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { "branch", "diff", "diagnostics" },
-				lualine_c = { "filename", "selectioncount" },
+				lualine_c = { "vim.fn.expand('%:p')", "selectioncount" },
 				lualine_x = {
 					"encoding",
 					"fileformat",
