@@ -139,9 +139,13 @@ cursor_mode
 ### custome alias 
 cdw() { local d=`wslpath "$1"`; cd "$d"; }
 alias vi='nvim'
+alias la='ls -a'
+alias cl='clear'
 alias cdob='cd /mnt/d/Documents/obsidian'
 alias cmd='/mnt/c/Windows/SysWOW64/WindowsPowerShell/v1.0/powershell.exe'
 alias wslo='wsl-open'
+alias exp='explorer.exe'
+
 
 #zsh-syntax-highlighting
 zsh_syntax_highlighting=".zsh/plugins/zsh-syntax-highlighting"
