@@ -59,5 +59,3 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - cmake
 - texlive (for vimtex)
 - tree-sitter-cli (for latex parser)
-
-
