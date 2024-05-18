@@ -82,18 +82,17 @@ zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
 zinit light jeffreytse/zsh-vi-mode
 
 
 # Completion styling
-fpath=($fpath ~/.local/share/zinit/completions)
+fpath=(~/.local/share/zinit/completions/src $fpath)
 autoload -Uz compinit && compinit
+bindkey '^o' autosuggest-accept
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 ### custome alias 
 cdw() { local d=`wslpath "$1"`; cd "$d"; }
