@@ -29,6 +29,10 @@ opt.splitright = true
 -- set undodir
 opt.undofile = true
 opt.undodir = vim.fn.expand("$HOME/.undo//")
+-- built-in indent blank line
+opt.list = true
+opt.listchars = { leadmultispace = "│ ", multispace = "│ ", tab = "│ " }
+
 -- set folding
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
