@@ -13,20 +13,12 @@ vim.g.markdown_recommended_style = 0 -- set default tabstop in markdown file
 opt.number = true
 opt.relativenumber = true
 -- scrolloff, keep the cursor at the middle of screen
-vim.opt.scrolloff = 999
--- local function center_cursor()
--- 	local pos = vim.api.nvim_win_get_cursor(0)
--- 	vim.api.nvim_command("normal! zz")
--- 	vim.api.nvim_win_set_cursor(0, pos)
--- end
--- vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
--- 	pattern = "*",
--- 	callback = center_cursor,
--- })
-
+opt.scrolloff = 999
+-- jumpoptions
+opt.jumpoptions = "stack,view"
 -- set vim spell check
-vim.opt.spelllang = "en_us,cjk"
-vim.opt.spell = true
+opt.spelllang = "en_us,cjk"
+opt.spell = true
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
@@ -50,10 +42,10 @@ opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldenable = false
 -- shada file
-vim.opt.shada = { "'50", "<100", "s100", "h" }
+opt.shada = { "'50", "<100", "s100", "h" }
 
 -- clipboard settings
-vim.opt.clipboard = "unnamedplus"
+opt.clipboard = "unnamedplus"
 -- copy to system clip board in wsl
 if vim.fn.has("wsl") == 1 then
 	vim.api.nvim_create_autocmd("TextYankPost", {
