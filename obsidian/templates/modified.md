@@ -1,1 +1,0 @@
-Last modified: {{date}} {{time}}

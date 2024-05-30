@@ -96,6 +96,7 @@ alias vi='nvim'
 alias ls='ls --color'
 alias la='ls -a'
 alias cl='clear'
+alias cdob='cd $HOME/Documents/obsidian/'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
