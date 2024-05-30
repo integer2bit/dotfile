@@ -24,9 +24,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 ###  Path
 if [ "$(id -u)" -eq 0 ]; then
   PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-  if uname -r | grep -qi WSL; then
-      export PATH=$PATH:/mnt/c/Windows/SysWOW64/WindowsPowerShell/v1.0:/mnt/c/windows
-fi
 else
   PATH="/usr/local/bin:/usr/bin:/bin"
 fi
@@ -95,16 +92,10 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 
 ### custome alias 
-cdw() { local d=`wslpath "$1"`; cd "$d"; }
 alias vi='nvim'
 alias ls='ls --color'
 alias la='ls -a'
 alias cl='clear'
-alias cdob='cd /mnt/d/Documents/obsidian'
-alias cmd='/mnt/c/Windows/SysWOW64/WindowsPowerShell/v1.0/powershell.exe'
-alias wslo='wsl-open'
-alias exp='explorer.exe'
-
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

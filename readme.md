@@ -9,14 +9,13 @@
 
 ## include config
 
-- neovim(in wsl)
-  - wsl-open.sh for open file with external program
-    - Installation: `curl -o /usr/bin/wsl-open https://raw.githubusercontent.com/integer2bit/dotfiles/main/wsl-open.sh`
+- neovim(in ArchLinux)
     - intergrate with obsidian
-- wezterm (windows)
+- wezterm 
 - .wslconfig
 - tmux
 - aria2
+- zsh
 
 ## tmux
 
@@ -30,6 +29,12 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 
 - prefix set \<C-Space\>
 - \<prefix\>r reload tmux config
+
+## wezterm 
+
+### dependencies
+
+- nerd-fonts: ttf-jetbrains-mono-nerd
 
 ## zsh dependencies
 
