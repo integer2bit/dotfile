@@ -21,7 +21,7 @@
 
 ### dependencies
 
-- xclip for tmux yank
+- xclip for tmux yank and clipboard
 
 ### Install config
 
