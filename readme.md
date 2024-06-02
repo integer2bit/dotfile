@@ -10,8 +10,8 @@
 ## include config
 
 - neovim(in ArchLinux)
-    - intergrate with obsidian
-- wezterm 
+  - intergrate with obsidian
+- wezterm
 - .wslconfig
 - tmux
 - aria2
@@ -30,7 +30,7 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - prefix set \<C-Space\>
 - \<prefix\>r reload tmux config
 
-## wezterm 
+## wezterm
 
 ### dependencies
 
