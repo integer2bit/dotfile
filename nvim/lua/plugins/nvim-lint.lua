@@ -9,15 +9,15 @@ return {
 			typescript = { "eslint_d" },
 			javascriptreact = { "eslint_d" },
 			typescriptreact = { "eslint_d" },
-			markdown = { "markdownlint" },
+			-- markdown = { "markdownlint" },
 			-- python = { "pylint" },
 		}
-		local markdownlint = require("lint").linters.markdownlint
-		markdownlint.args = {
-			"--disable",
-			"MD013",
-			"--", -- Required
-		}
+		-- local markdownlint = require("lint").linters.markdownlint
+		-- markdownlint.args = {
+		-- 	"--disable",
+		-- 	"MD013",
+		-- 	"--", -- Required
+		-- }
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
