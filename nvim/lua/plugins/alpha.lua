@@ -34,10 +34,10 @@ return {
 		}
 		dashboard.section.header.opts.hl = "none"
 		dashboard.section.buttons.val = {
-			dashboard.button("e", "  > New file", ":ene <BAR> startinsert <CR>"),
+			dashboard.button("n", "  > New file", ":ene <BAR> startinsert <CR>"),
 			--			dashboard.button("f", "󰈞  > Find file", ":cd $HOME | Telescope find_files hidden=true<cr>"),
 			dashboard.button("r", "  > Recent file", ":Telescope oldfiles<CR>"),
-			dashboard.button("n", "  > File exolrer", ":Oil<CR>"),
+			dashboard.button("e", "  > File exolrer", ":Oil<CR>"),
 			dashboard.button("q", "󰗼  > Quit NVIM", ":qa<CR>"),
 		}
 		return dashboard
