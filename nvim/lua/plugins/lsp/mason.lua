@@ -51,6 +51,7 @@ return {
 				"cmakelang", -- cmake formatter and linter
 				"markdownlint", -- markdown linter
 				"eslint_d", -- js linter
+				"jsonlint",
 				--        "isort", -- python formatter
 				--        "black", -- python formatter
 				--        "pylint", -- python linter
