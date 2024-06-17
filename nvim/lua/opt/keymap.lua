@@ -25,7 +25,7 @@ end, { desc = "Set current buffer directory as working directory" })
 vim.keymap.set("n", '<leader>"', '"_', { noremap = true, silent = true, desc = "black hole register" })
 vim.keymap.set("v", '<leader>"', '"_', { noremap = true, silent = true, desc = "black hole register" })
 -- window management
-vim.keymap.set("n", "<leader>w", "<C-w>", { noremap = true, silent = true, desc = "window operation" })
+vim.keymap.set("n", "<C-w>h", "<C-w>s", { desc = "Horizontal split window" }) -- open new tab
 -- buffer management
 vim.keymap.set("n", "<leader>bn", "<cmd>bn<CR>", { desc = "Next buffer" }) -- open new tab
 vim.keymap.set("n", "<leader>bp", "<cmd>bp<CR>", { desc = "Previous buffer" }) -- open new tab

@@ -36,6 +36,7 @@ return {
 				"clangd",
 				"cmake",
 				"marksman",
+				"bashls",
 				--        "emmet_ls",
 				--        "prismals",
 				--        "pyright",
