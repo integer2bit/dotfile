@@ -53,6 +53,7 @@ return {
 				"markdownlint", -- markdown linter
 				"eslint_d", -- js linter
 				"jsonlint",
+				"shfmt",
 				--        "isort", -- python formatter
 				--        "black", -- python formatter
 				--        "pylint", -- python linter

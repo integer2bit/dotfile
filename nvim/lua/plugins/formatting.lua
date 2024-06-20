@@ -16,6 +16,7 @@ return {
 				yaml = { "prettier" },
 				lua = { "stylua" },
 				cmake = { "cmakelang" },
+				bash = { "shfmt" },
 				-- markdown = { "prettier" },
 				-- svelte = { "prettier" },
 				-- graphql = { "prettier" },
