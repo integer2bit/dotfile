@@ -11,7 +11,11 @@ return {
 			configs.setup({
 				ensure_installed = { "regex", "markdown", "markdown_inline", "vim" },
 				auto_install = true,
-				highlight = { enable = true },
+				highlight = {
+					enable = true,
+					disable = { "latex" },
+					additional_vim_regex_highlighting = { "latex", "markdown" },
+				},
 				indent = { enable = true },
 				-- enable autotagging (w/ nvim-ts-autotag plugin)
 				autotag = {
